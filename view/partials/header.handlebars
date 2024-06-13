@@ -1,0 +1,17 @@
+<header>
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="/">Tech Blog</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        {{#if logged_in}}
+          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a id="logout" href="#">Logout</a></li>
+        {{else}}
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
+</header>

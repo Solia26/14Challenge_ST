@@ -1,0 +1,29 @@
+{{!-- Extending the main layout --}}
+{{#extend 'main'}}
+  {{#content 'body'}}
+    <h2>Dashboard</h2>
+
+    <form class="new-post-form">
+      <div class="form-group">
+        <label for="post-title">Title</label>
+        <input type="text" id="post-title" name="title">
+      </div>
+      <div class="form-group">
+        <label for="post-content">Content</label>
+        <textarea id="post-content" name="content" rows="4"></textarea>
+      </div>
+      <button type="submit">Create Post</button>
+    </form>
+
+    <div class="post-list">
+      {{#each posts}}
+        <div class="post">
+          <h3>{{this.title}}</h3>
+          <p>{{this.content}}</p>
+          <small>Created on {{this.createdAt}}</small>
+          <button data-id="{{this.id}}" class="delete-post">Delete</button>
+        </div>
+      {{/each}}
+    </div>
+  {{/content}}
+{{/extend}}

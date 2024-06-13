@@ -1,0 +1,37 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Output of build process
+dist/
+build/
+out/
+
+# Editor/IDE specific files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# npm debugging logs
+npm-debug.log*
+
+# Mac specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+
+# Ignore Render deployment files
+render.yml

@@ -1,0 +1,18 @@
+{{!-- Extending the main layout --}}
+{{#extend 'main'}}
+
+  {{#content 'body'}}
+    <h1>Tech Blog</h1>
+    <div class="post-list">
+      {{#each posts}}
+        <div class="post">
+          <h2>{{this.title}}</h2>
+          <p>{{this.content}}</p>
+          <small>By {{this.user.username}} on {{format_date this.createdAt}}</small>
+          <a href="/post/{{this.id}}">Read More</a>
+        </div>
+      {{/each}}
+    </div>
+  {{/content}}
+
+{{/extend}}
