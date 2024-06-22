@@ -1,7 +1,5 @@
 
-{{#extend 'main'}}
 
-  {{#content 'body'}}
     <h2>{{title}}</h2>
     <p>{{content}}</p>
     <small>By {{user.username}} on {{format_date createdAt}}</small>
@@ -27,6 +25,3 @@
     {{else}}
       <p>You must be logged in to leave a comment.</p>
     {{/if}}
-  {{/content}}
-
-{{/extend}}

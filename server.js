@@ -28,10 +28,10 @@ const hbs = exphbs.create({
   },
 });
 
-// Setup session storage using Sequelize
+
 const sess = {
   secret: process.env.SESSION_SECRET || 'super secret secret',
-  cookie: { maxAge: 3600000 }, // Session timeout in milliseconds (1 hour)
+  cookie: { maxAge: 3600000 }, 
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -39,21 +39,20 @@ const sess = {
   }),
 };
 
-// Middleware setup
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
 
-// Set Handlebars as the view engine
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// Define routes
+
 app.use('/', routes);
 app.use('/api', apiRoutes);
 
-// Sync Sequelize models to the database, then start the server
+
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
 });
